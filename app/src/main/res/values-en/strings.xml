@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--common string resource-->
+    <string name="app_name">MyStoryApplication</string>
+    <string name="name_hint">Name</string>
+    <string name="username_hint">Email</string>
+    <string name="password_hint" tools:keep="@string/password_hint">Password</string>
+    <string name="loading_text_label">Please wait a minutes ya..</string>
+    <string name="empty_data_text_label">Opps we have found empty data</string>
+
+    <!--splash activity-->
+    <string name="splash_label_story">Let Share Your Story</string>
+
+    <!--custom password input text-->
+    <string name="password_input_text_warning_password">"Password must have 6 character"</string>
+    <string name="password_input_text_warning_username" tools:keep="@string/password_input_text_warning_username">"Email format is invalid"</string>
+
+    <!-- login fragment-->
+    <string name="login_app_name_label">My Story App</string>
+    <string name="login_app_desc">Let share your great story everyday!</string>
+    <string name="login_register_desc">If you don\'t have an account</string>
+    <string name="login_register_label">Register</string>
+    <string name="login_button_label">Login</string>
+    <string name="login_status_failed_title">Error when login</string>
+    <string name="login_status_failed_desc">Yaahh.. please check again your email and password</string>
+
+    <!--register fragment-->
+    <string name="register_welcome_label">Welcome</string>
+    <string name="register_welcome_desc">Let start to share your story</string>
+    <string name="register_button_label">Register</string>
+    <string name="register_input_email_error_message">Opps, this email format is not valid</string>
+    <string name="register_input_name_error_message">Name at least contains 3 character</string>
+    <string name="register_input_invalid_message">Please fill all data</string>
+    <string name="register_status_success_title">Register successful</string>
+    <string name="register_status_success_desc">Register is success, let\'s go inside</string>
+    <string name="register_status_failed_title">Error when register</string>
+    <string name="register_status_failed_desc">Yaahh.. your email is already taken</string>
+
+    <!--stories list fragment-->
+    <string name="stories_list_title_page">Stories</string>
+
+    <!--story detail fragment-->
+    <string name="story_detail_title_page">Story Detail</string>
+
+    <!--new story fragment-->
+    <string name="new_story_title_page">Create New Story</string>
+    <string name="new_story_description_hint">Description</string>
+    <string name="new_story_btn_camera">Camera</string>
+    <string name="new_story_btn_gallery">Gallery</string>
+    <string name="new_story_btn_upload">Upload</string>
+    <string name="new_story_direct_to_gallery">Redirect to gallery</string>
+    <string name="new_story_select_image">Choose a Picture</string>
+    <string name="new_story_failed_title">Error when upload story</string>
+    <string name="new_story_failed_desc">Please make sure image file and caption filled</string>
+    <string name="new_story_success_message">Yeay upload story successfully</string>
+    <string name="logout_text_label" tools:keep="@string/logout_text_label">Logout</string>
+    <string name="logout_text_title">Logout from application</string>
+    <string name="logout_text_desc">Are you soure want to logout from this application?</string>
+    <string name="logout_text_confirm">Sure</string>
+    <string name="logout_text_cancel">Cancel</string>
+    <string name="camera_failed_to_start">Failed to open camera</string>
+    <string name="camera_failed_to_capture">Failed to capture image</string>
+</resources>

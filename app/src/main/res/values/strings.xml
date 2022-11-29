@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--common string resource-->
+    <string name="app_name">MyStoryApplication</string>
+    <string name="name_hint">Nama</string>
+    <string name="username_hint">Email</string>
+    <string name="password_hint" tools:keep="@string/password_hint">Password</string>
+    <string name="loading_text_label">Mohon tunggu sebentar ya..</string>
+    <string name="empty_data_text_label">Yah data yang didapat kosong</string>
+    <string name="logout_text_label" tools:keep="@string/logout_text_label">Keluar</string>
+    <string name="logout_text_title">Keluar dari aplikasi</string>
+    <string name="logout_text_desc">Kamu yakin ingin keluar dari aplikasi sekarang?</string>
+    <string name="logout_text_confirm">Iya</string>
+    <string name="logout_text_cancel">Batal</string>
+
+    <!--splash activity-->
+    <string name="splash_label_story">Ayo Berbagi Cerita</string>
+
+    <!--custom password input text-->
+    <string name="password_input_text_warning_password">"Minimal password 6 karakter"</string>
+    <string name="password_input_text_warning_username" tools:keep="@string/password_input_text_warning_username">"Format email tidak cocok"</string>
+
+    <!-- login fragment-->
+    <string name="login_app_name_label">My Story App</string>
+    <string name="login_app_desc">Ayo berbagi cerita menarik setiap harinya!</string>
+    <string name="login_register_desc">Jika kamu belum memiliki akun silahkan</string>
+    <string name="login_register_label">Daftar</string>
+    <string name="login_button_label">Masuk</string>
+    <string name="login_status_failed_title">Kesalahan saat login</string>
+    <string name="login_status_failed_desc">Yaahh.. coba check kembali email dan password kamu</string>
+
+    <!--register fragment-->
+    <string name="register_welcome_label">Selamat Datang</string>
+    <string name="register_welcome_desc">Ayo mulai untuk berbagi cerita</string>
+    <string name="register_button_label">Daftar</string>
+    <string name="register_input_email_error_message">"Format email yang dimasukan tidak valid"</string>
+    <string name="register_input_name_error_message">"Minimal nama harus 3 karakter"</string>
+    <string name="register_input_invalid_message">"Harap melengkapi semua data"</string>
+    <string name="register_status_success_title">Berhasil mendaftar</string>
+    <string name="register_status_success_desc">Pendaftaran berhasil, yuk segera masuk</string>
+    <string name="register_status_failed_title">Kesalahan saat mendaftar</string>
+    <string name="register_status_failed_desc">Yaahh.. email yang anda masukan sudah digunakan</string>
+
+    <!--stories list fragment-->
+    <string name="stories_list_title_page">Daftar Cerita</string>
+
+    <!--story detail fragment-->
+    <string name="story_detail_title_page">Detil Cerita</string>
+
+    <!--camera fragment-->
+    <string name="camera_failed_to_start">Gagal membuka kamera.</string>
+    <string name="camera_failed_to_capture">"Gagal mengambil gambar."</string>
+
+    <!--new story fragment-->
+    <string name="new_story_title_page">Buat Cerita Baru</string>
+    <string name="new_story_description_hint">Deskripsi</string>
+    <string name="new_story_btn_camera">Kamera</string>
+    <string name="new_story_btn_gallery">Galeri</string>
+    <string name="new_story_btn_upload">Upload</string>
+    <string name="new_story_direct_to_gallery">Mengarahkan ke galeri</string>
+    <string name="new_story_select_image">Silahkan pilih sebuah gambar</string>
+    <string name="new_story_failed_title">Kesalahan saat mengupload cerita</string>
+    <string name="new_story_failed_desc">Pastikan file gambar dan caption sudah terisi</string>
+    <string name="new_story_success_message">Yeay berhasil mengupload cerita</string>
+</resources>

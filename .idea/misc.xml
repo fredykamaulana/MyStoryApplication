@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/drawable/background_rounded_input_text.xml" value="0.241" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/drawable/ic_baseline_add.xml" value="0.241" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/drawable/ic_image.xml" value="0.1935" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1935" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/drawable/ic_logout.xml" value="0.1935" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/drawable/shape_rounded_rectangle.xml" value="0.241" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/drawable/top_rounded_bottomsheet_dialog.xml" value="0.241" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout-v26/layout_stories_item.xml" value="0.3625" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/fragment_camera_x.xml" value="0.33" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/fragment_logout.xml" value="0.3625" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/fragment_new_story.xml" value="0.33" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/fragment_register.xml" value="0.3625" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/fragment_splash.xml" value="0.3625" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/fragment_stories_list.xml" value="0.16246498599439776" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/fragment_story_detail.xml" value="0.3625" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/layout_custom_button_loading.xml" value="0.3625" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/layout_custom_input_text.xml" value="0.3625" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/layout_custom_progress_button.xml" value="0.33" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/layout_empty_data.xml" value="0.3625" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/layout_loading_progress.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/layout_password_input_text.xml" value="0.3625" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/layout/layout_stories_item.xml" value="0.3625" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/menu/bottom_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/menu/toolbar_menu.xml" value="0.33" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1935" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MyStoryApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1935" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

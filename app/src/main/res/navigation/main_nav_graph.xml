@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/splash_fragment">
+
+    <action
+        android:id="@+id/to_stories_list_fragment_new"
+        app:destination="@id/stories_list_fragment"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popExitAnim="@android:anim/slide_out_right"
+        app:popUpTo="@id/stories_list_fragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/to_login_fragment"
+        app:destination="@id/login_fragment"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:launchSingleTop="true"
+        app:popExitAnim="@android:anim/slide_out_right"
+        app:popUpTo="@id/login_fragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/to_login_fragment_no_transition"
+        app:destination="@id/login_fragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/login_fragment"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="com.miniapp.mystoryapplication.presentation.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+    </fragment>
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.miniapp.mystoryapplication.presentation.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_fragment_to_register_fragment"
+            app:destination="@id/register_fragment"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_login_fragment_to_stories_list_fragment"
+            app:destination="@id/stories_list_fragment"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <argument
+            android:name="isRegisterSuccess"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/register_fragment"
+        android:name="com.miniapp.mystoryapplication.presentation.ui.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_fragment_to_login_fragment"
+            app:destination="@id/login_fragment"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/login_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/stories_list_fragment"
+        android:name="com.miniapp.mystoryapplication.presentation.ui.storieslist.StoriesListFragment"
+        android:label="fragment_stories_list"
+        tools:layout="@layout/fragment_stories_list">
+        <action
+            android:id="@+id/action_stories_list_fragment_to_story_detail_fragment"
+            app:destination="@id/story_detail_fragment" />
+        <action
+            android:id="@+id/action_stories_list_fragment_to_new_story_fragment"
+            app:destination="@id/new_story_fragment"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/story_detail_fragment"
+        android:name="com.miniapp.mystoryapplication.presentation.ui.storydetail.StoryDetailFragment"
+        android:label="fragment_story_detail"
+        tools:layout="@layout/fragment_story_detail">
+        <argument
+            android:name="item"
+            android:defaultValue="@null"
+            app:argType="com.miniapp.mystoryapplication.presentation.responseui.StoriesResponseUiModel"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/new_story_fragment"
+        android:name="com.miniapp.mystoryapplication.presentation.ui.newstory.NewStoryFragment"
+        android:label="fragment_new_story"
+        tools:layout="@layout/fragment_new_story">
+        <action
+            android:id="@+id/action_new_story_fragment_to_cameraXFragment"
+            app:destination="@id/camera_x_fragment"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <argument
+            android:name="file"
+            android:defaultValue="@null"
+            app:argType="java.io.File"
+            app:nullable="true" />
+        <argument
+            android:name="isBackCamera"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/camera_x_fragment"
+        android:name="com.miniapp.mystoryapplication.presentation.ui.camerax.CameraXFragment"
+        android:label="camera_x_fragment"
+        tools:layout="@layout/fragment_camera_x">
+        <action
+            android:id="@+id/action_cameraXFragment_to_new_story_fragment"
+            app:destination="@id/new_story_fragment"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/new_story_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/logout"
+        android:name="com.miniapp.mystoryapplication.presentation.ui.logout.LogoutFragment"
+        android:label="Logout"
+        tools:layout="@layout/fragment_logout" >
+    </dialog>
+
+</navigation>
