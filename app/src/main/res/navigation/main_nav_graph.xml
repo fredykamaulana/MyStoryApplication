@@ -27,14 +27,15 @@
         app:destination="@id/login_fragment"
         app:launchSingleTop="true"
         app:popUpTo="@id/login_fragment"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popExitAnim="@android:anim/slide_out_right"
         app:popUpToInclusive="true" />
 
     <fragment
         android:id="@+id/splash_fragment"
         android:name="com.miniapp.mystoryapplication.presentation.ui.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash">
-    </fragment>
+        tools:layout="@layout/fragment_splash" />
 
     <fragment
         android:id="@+id/login_fragment"
@@ -78,10 +79,17 @@
         tools:layout="@layout/fragment_stories_list">
         <action
             android:id="@+id/action_stories_list_fragment_to_story_detail_fragment"
-            app:destination="@id/story_detail_fragment" />
+            app:destination="@id/story_detail_fragment"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/slide_out_right" />
         <action
             android:id="@+id/action_stories_list_fragment_to_new_story_fragment"
             app:destination="@id/new_story_fragment"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/to_stories_map_fragment"
+            app:destination="@id/stories_map_fragment"
             app:exitAnim="@android:anim/slide_out_right"
             app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
@@ -118,6 +126,7 @@
             android:defaultValue="true"
             app:argType="boolean" />
     </fragment>
+
     <fragment
         android:id="@+id/camera_x_fragment"
         android:name="com.miniapp.mystoryapplication.presentation.ui.camerax.CameraXFragment"
@@ -136,7 +145,12 @@
         android:id="@+id/logout"
         android:name="com.miniapp.mystoryapplication.presentation.ui.logout.LogoutFragment"
         android:label="Logout"
-        tools:layout="@layout/fragment_logout" >
-    </dialog>
+        tools:layout="@layout/fragment_logout" />
+
+    <fragment
+        android:id="@+id/stories_map_fragment"
+        android:name="com.miniapp.mystoryapplication.presentation.ui.storiesmap.StoriesMapFragment"
+        android:label="Stories Map"
+        tools:layout="@layout/fragment_stories_map" />
 
 </navigation>
