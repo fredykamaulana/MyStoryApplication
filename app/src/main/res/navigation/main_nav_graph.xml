@@ -150,7 +150,10 @@
     <fragment
         android:id="@+id/stories_map_fragment"
         android:name="com.miniapp.mystoryapplication.presentation.ui.storiesmap.StoriesMapFragment"
-        android:label="Stories Map"
-        tools:layout="@layout/fragment_stories_map" />
+        android:label="Stories Map" >
+        <argument
+            android:name="userLocationData"
+            app:argType="com.miniapp.mystoryapplication.presentation.responseui.UserLocationData" />
+    </fragment>
 
 </navigation>
