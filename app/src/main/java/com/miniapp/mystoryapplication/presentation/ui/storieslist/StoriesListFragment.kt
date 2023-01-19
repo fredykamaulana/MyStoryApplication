@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.snackbar.Snackbar
 import com.miniapp.mystoryapplication.R
 import com.miniapp.mystoryapplication.core.abstraction.BaseFragment
@@ -16,7 +17,9 @@ import com.miniapp.mystoryapplication.core.delegates.viewBinding
 import com.miniapp.mystoryapplication.data.utils.ResultState
 import com.miniapp.mystoryapplication.databinding.FragmentStoriesListBinding
 import com.miniapp.mystoryapplication.domain.mapper.mapStoriesDomainToUi
+import com.miniapp.mystoryapplication.domain.responsedomain.StoriesResponseDomainModel
 import com.miniapp.mystoryapplication.presentation.responseui.StoriesResponseUiModel
+import com.miniapp.mystoryapplication.presentation.responseui.UserLocationData
 import com.miniapp.mystoryapplication.presentation.ui.storieslist.adapter.StoryListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -26,6 +29,8 @@ class StoriesListFragment : BaseFragment(R.layout.fragment_stories_list), OnItem
 
     private var adapter: StoryListAdapter? = null
     private var isSavedInstanceState = false
+
+    private lateinit var userLocationData: UserLocationData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +60,8 @@ class StoriesListFragment : BaseFragment(R.layout.fragment_stories_list), OnItem
                 }
                 is ResultState.Success -> {
                     binding.containerLoadingProgress.root.visibility = View.GONE
+                    mapUserLocationData(data.data)
+
                     val storiesList = data.data?.listStory?.map {
                         mapStoriesDomainToUi.map(it)
                     }
@@ -76,6 +83,26 @@ class StoriesListFragment : BaseFragment(R.layout.fragment_stories_list), OnItem
         }
     }
 
+    private fun mapUserLocationData(storiesList: StoriesResponseDomainModel?) {
+        val userInfo = mutableListOf<String>()
+        val userLatLng = mutableListOf<LatLng>()
+
+        storiesList?.listStory?.forEach {
+            userInfo.add("${it?.name.orEmpty()}: ${it?.description.orEmpty()}")
+            userLatLng.add(
+                LatLng(
+                    it?.lat?.toDouble() ?: 0.0,
+                    it?.lon?.toDouble() ?: 0.0
+                )
+            )
+        }
+
+        userLocationData = UserLocationData(
+            userInfo = userInfo,
+            userLatLng = userLatLng
+        )
+    }
+
     private fun setupView() {
         binding.rvStoriesList.adapter = adapter
     }
@@ -89,7 +116,7 @@ class StoriesListFragment : BaseFragment(R.layout.fragment_stories_list), OnItem
         when (item.itemId) {
             R.id.mapView -> {
                 findNavController().navigate(
-                    StoriesListFragmentDirections.toStoriesMapFragment()
+                    StoriesListFragmentDirections.toStoriesMapFragment(userLocationData)
                 )
             }
         }
