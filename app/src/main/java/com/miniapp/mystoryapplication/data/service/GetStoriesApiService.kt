@@ -2,6 +2,7 @@ package com.miniapp.mystoryapplication.data.service
 
 import com.miniapp.mystoryapplication.data.response.StoriesResponseDto
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface GetStoriesApiService {
     /**
@@ -23,5 +24,6 @@ interface GetStoriesApiService {
     @GET("stories")
     suspend fun getStories(
         //@Header("Authorization") token: String
+        @Query("location") location: Int = 1
     ): StoriesResponseDto
 }
