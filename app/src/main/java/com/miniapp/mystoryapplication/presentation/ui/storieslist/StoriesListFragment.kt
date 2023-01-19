@@ -2,6 +2,9 @@ package com.miniapp.mystoryapplication.presentation.ui.storieslist
 
 import android.os.Bundle
 import android.os.Parcelable
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
@@ -36,6 +39,7 @@ class StoriesListFragment : BaseFragment(R.layout.fragment_stories_list), OnItem
 
         setupObservers()
         setupView()
+        setHasOptionsMenu(true)
     }
 
     override fun onResume() {
@@ -74,6 +78,22 @@ class StoriesListFragment : BaseFragment(R.layout.fragment_stories_list), OnItem
 
     private fun setupView() {
         binding.rvStoriesList.adapter = adapter
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.top_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.mapView -> {
+                findNavController().navigate(
+                    StoriesListFragmentDirections.toStoriesMapFragment()
+                )
+            }
+        }
+        return true
     }
 
     override fun onClick(item: Parcelable, view: View) {
