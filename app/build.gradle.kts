@@ -59,6 +59,7 @@ dependencies {
     implementation(Dependencies.timber)
     implementation(Dependencies.lottie)
     implementation(Dependencies.cameraLibraries)
+    implementation(Dependencies.gMaps)
     kapt(Dependencies.kaptLibraries)
 
     implementation(Dependencies.testLibraries)
