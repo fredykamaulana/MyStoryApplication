@@ -77,6 +77,9 @@ object Dependencies {
     private const val cameraXView = "androidx.camera:camera-view:${Versions.cameraXVersion}"
     val cameraLibraries = listOf(cameraX, cameraXLifeCycle, cameraXView)
 
+    // google maps
+    const val gMaps = "com.google.android.gms:play-services-maps:${Versions.mapsVersion}"
+
     val kaptLibraries = listOf(roomCompiler, glideCompiler)
 }
 
