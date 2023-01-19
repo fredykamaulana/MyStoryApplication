@@ -28,4 +28,5 @@ object Versions {
     const val timberVersion = "4.7.1"
     const val lottieVersion = "4.2.2"
     const val cameraXVersion = "1.1.0"
+    const val mapsVersion = "18.0.0"
 }
