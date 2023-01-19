@@ -43,6 +43,7 @@
 
     <!--stories list fragment-->
     <string name="stories_list_title_page">Daftar Cerita</string>
+    <string name="stories_list_menu_map_view">Lihat Peta</string>
 
     <!--story detail fragment-->
     <string name="story_detail_title_page">Detil Cerita</string>

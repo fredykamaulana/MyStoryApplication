@@ -60,4 +60,5 @@
     <string name="logout_text_cancel">Cancel</string>
     <string name="camera_failed_to_start">Failed to open camera</string>
     <string name="camera_failed_to_capture">Failed to capture image</string>
+    <string name="stories_list_menu_map_view">Open Map</string>
 </resources>
