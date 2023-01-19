@@ -8,11 +8,13 @@ val mapStoriesDomainToUi =
     object : BaseMapper<StoriesResponseDomainModel.ListStoryItem?, StoriesResponseUiModel>() {
         override fun map(data: StoriesResponseDomainModel.ListStoryItem?): StoriesResponseUiModel {
             return StoriesResponseUiModel(
-                id = data?.id ?: "",
-                name = data?.name ?: "",
-                description = data?.description ?: "",
-                photoUrl = data?.photoUrl ?: "",
-                createdAt = data?.createdAt ?: ""
+                id = data?.id.orEmpty(),
+                name = data?.name.orEmpty(),
+                description = data?.description.orEmpty(),
+                photoUrl = data?.photoUrl.orEmpty(),
+                createdAt = data?.createdAt.orEmpty(),
+                lon = data?.lon ?: 0.0f,
+                lat = data?.lat ?: 0.0f
             )
         }
     }
