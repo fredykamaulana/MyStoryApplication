@@ -77,6 +77,9 @@ class MainActivity : BaseActivity() {
                     setWindowWithToolbar(resources.getString(R.string.new_story_title_page))
                     setScreeWithoutBottomNav()
                 }
+                R.id.stories_map_fragment -> {
+                    setScreeWithoutBottomNav()
+                }
             }
         }
 
