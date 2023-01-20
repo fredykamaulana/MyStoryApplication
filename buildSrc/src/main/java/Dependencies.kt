@@ -80,6 +80,9 @@ object Dependencies {
     // google maps
     const val gMaps = "com.google.android.gms:play-services-maps:${Versions.mapsVersion}"
 
+    // paging
+    const val paging = "androidx.paging:paging-runtime-ktx:${Versions.pagingVersion}"
+
     val kaptLibraries = listOf(roomCompiler, glideCompiler)
 }
 
