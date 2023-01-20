@@ -6,6 +6,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Environment
+import androidx.paging.PagingData
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -13,6 +14,8 @@ import java.io.InputStream
 import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.Locale
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.last
 
 fun Uri.uriToFile(context: Context): File {
     val contentResolver: ContentResolver = context.contentResolver
@@ -56,4 +59,24 @@ fun File.reduceFileImage(isCameraBack: Boolean): File {
     } while (streamLength > 1000000)
     bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(this))
     return this
+}
+
+@Suppress("UNCHECKED_CAST")
+suspend fun <T : Any> PagingData<T>.toList(): List<T> {
+    val flow = PagingData::class.java.getDeclaredField("flow").apply {
+        isAccessible = true
+    }.get(this) as Flow<Any?>
+    val pageEventInsert = flow.last()
+    val pageEventInsertClass = Class.forName("androidx.paging.PageEvent\$Insert")
+    val pagesField = pageEventInsertClass.getDeclaredField("pages").apply {
+        isAccessible = true
+    }
+    val pages = pagesField.get(pageEventInsert) as List<Any?>
+    val transformablePageDataField =
+        Class.forName("androidx.paging.TransformablePage").getDeclaredField("data").apply {
+            isAccessible = true
+        }
+    val listItems =
+        pages.flatMap { transformablePageDataField.get(it) as List<*> }
+    return listItems as List<T>
 }
