@@ -10,4 +10,11 @@ class GetStoriesRemoteDataSource(private val apiService: GetStoriesApiService) :
     suspend fun getStories(): Flow<RemoteResult<StoriesResponseDto>> {
         return safeApiCall { apiService.getStories() }
     }
+
+    suspend fun getStoriesWithPaging(
+        page: Int = 0,
+        size: Int = 0
+    ): Flow<RemoteResult<StoriesResponseDto>> {
+        return safeApiCall { apiService.getStories(page = page, size = size) }
+    }
 }
