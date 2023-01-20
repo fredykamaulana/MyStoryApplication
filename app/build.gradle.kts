@@ -60,6 +60,8 @@ dependencies {
     implementation(Dependencies.lottie)
     implementation(Dependencies.cameraLibraries)
     implementation(Dependencies.gMaps)
+    implementation(Dependencies.paging)
+
     kapt(Dependencies.kaptLibraries)
 
     implementation(Dependencies.testLibraries)
