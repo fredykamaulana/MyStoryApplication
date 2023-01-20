@@ -23,7 +23,13 @@ interface GetStoriesApiService {
 
     @GET("stories")
     suspend fun getStories(
-        //@Header("Authorization") token: String
+        @Query("location") location: Int = 1
+    ): StoriesResponseDto
+
+    @GET("stories")
+    suspend fun getStories(
+        @Query("page") page: Int = 0,
+        @Query("size") size: Int = 0,
         @Query("location") location: Int = 1
     ): StoriesResponseDto
 }
