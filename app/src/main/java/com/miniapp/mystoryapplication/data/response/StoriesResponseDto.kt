@@ -11,7 +11,7 @@ data class StoriesResponseDto(
 	val message: String? = null,
 
 	@field:Json(name = "listStory")
-	val listStory: List<ListStoryItem?>? = null
+	val listStory: List<ListStoryItem> = emptyList()
 ) {
 	data class ListStoryItem(
 
