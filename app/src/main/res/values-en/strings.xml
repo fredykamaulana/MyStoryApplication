@@ -61,4 +61,7 @@
     <string name="camera_failed_to_start">Failed to open camera</string>
     <string name="camera_failed_to_capture">Failed to capture image</string>
     <string name="stories_list_menu_map_view">Open Map</string>
+    <string name="retry_text_label">Retry</string>
+    <string name="stories_map_success_fetch_data">Success load data</string>
+    <string name="stories_map_loading_fetch_data">Loading data please wait</string>
 </resources>

@@ -12,6 +12,7 @@
     <string name="logout_text_desc">Kamu yakin ingin keluar dari aplikasi sekarang?</string>
     <string name="logout_text_confirm">Iya</string>
     <string name="logout_text_cancel">Batal</string>
+    <string name="retry_text_label">Coba Lagi</string>
 
     <!--splash activity-->
     <string name="splash_label_story">Ayo Berbagi Cerita</string>
@@ -44,6 +45,10 @@
     <!--stories list fragment-->
     <string name="stories_list_title_page">Daftar Cerita</string>
     <string name="stories_list_menu_map_view">Lihat Peta</string>
+
+    <!--stories map fragment-->
+    <string name="stories_map_success_fetch_data">Berhasil mengambil data</string>
+    <string name="stories_map_loading_fetch_data">Sedang mengambil data</string>
 
     <!--story detail fragment-->
     <string name="story_detail_title_page">Detil Cerita</string>
