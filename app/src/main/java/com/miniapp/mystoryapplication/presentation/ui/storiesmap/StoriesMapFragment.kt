@@ -1,32 +1,89 @@
 package com.miniapp.mystoryapplication.presentation.ui.storiesmap
 
 import android.os.Bundle
-import androidx.navigation.fragment.navArgs
+import android.view.View
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
+import com.miniapp.mystoryapplication.R
+import com.miniapp.mystoryapplication.data.utils.ResultState
+import com.miniapp.mystoryapplication.domain.responsedomain.StoriesResponseDomainModel
 import com.miniapp.mystoryapplication.presentation.responseui.UserLocationData
+import com.miniapp.mystoryapplication.presentation.ui.storieslist.StoriesListViewModel
+import com.miniapp.mystoryapplication.presentation.utils.showLoadStatusSnackBar
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class StoriesMapFragment : SupportMapFragment(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    private lateinit var userLocationData: UserLocationData
 
     private val boundsBuilder = LatLngBounds.builder()
-    private val navArg: StoriesMapFragmentArgs by navArgs()
-    private val userLocationData by lazy { navArg.userLocationData }
+    private val vm: StoriesListViewModel by viewModel()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private var isMapReady = false
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupObservers()
         getMapAsync(this)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        vm.getStoriesList()
+    }
+
+    private fun setupObservers() {
+        vm.getStoriesList.observe(viewLifecycleOwner) { data ->
+            when (data) {
+                is ResultState.Loading -> {
+                    showLoadStatusSnackBar(
+                        getString(R.string.stories_map_loading_fetch_data), true
+                    )
+                }
+                is ResultState.Success -> {
+                    showLoadStatusSnackBar(
+                        getString(R.string.stories_map_success_fetch_data), false
+                    )
+                    userLocationDataMapping(data.data?.listStory)
+                }
+                is ResultState.Error -> {
+                    showLoadStatusSnackBar(data.message.orEmpty(), false) {
+                        vm.getStoriesList()
+                    }
+                }
+            }
+        }
+    }
+
+    private fun userLocationDataMapping(storiesList: List<StoriesResponseDomainModel.ListStoryItem?>?) {
+        val userInfo = mutableListOf<String>()
+        val userLatLng = mutableListOf<LatLng>()
+
+        storiesList?.forEach {
+            userInfo.add("${it?.name}: ${it?.description}")
+            userLatLng.add(
+                LatLng(
+                    it?.lat?.toDouble() ?: 0.0, it?.lon?.toDouble() ?: 0.0
+                )
+            )
+        }
+
+        userLocationData = UserLocationData(
+            userInfo = userInfo, userLatLng = userLatLng
+        )
+
+        if (isMapReady) addMapMarkers(userLocationData)
     }
 
     override fun onMapReady(map: GoogleMap) {
         mMap = map
-        addMapMarkers(userLocationData)
-        addMapBoundView()
+        isMapReady = true
     }
 
     private fun addMapMarkers(userLocationData: UserLocationData) {
@@ -38,6 +95,7 @@ class StoriesMapFragment : SupportMapFragment(), OnMapReadyCallback {
             )?.showInfoWindow()
             boundsBuilder.include(latLng)
         }
+        addMapBoundView()
     }
 
     private fun addMapBoundView() {
