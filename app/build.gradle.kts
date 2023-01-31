@@ -64,6 +64,6 @@ dependencies {
 
     kapt(Dependencies.kaptLibraries)
 
-    implementation(Dependencies.testLibraries)
+    testImplementation(Dependencies.testLibraries)
     androidTestImplementation(Dependencies.androidTestLibraries)
 }
