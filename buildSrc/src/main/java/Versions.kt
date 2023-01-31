@@ -30,4 +30,7 @@ object Versions {
     const val cameraXVersion = "1.1.0"
     const val mapsVersion = "18.0.0"
     const val pagingVersion = "3.1.0"
+    const val mockitoVersion = "3.12.4"
+    const val coreTestingVersion = "2.1.0"
+    const val coroutinesTestVersion = "1.6.1"
 }
