@@ -65,7 +65,15 @@ object Dependencies {
     private const val junit =  "junit:junit:${Versions.junitVersion}"
     private const val junitExt = "androidx.test.ext:junit:${Versions.junitExtVersion}"
     private const val espresso =  "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
-    val testLibraries = listOf(junit, junitExt)
+
+    private const val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTestingVersion}"
+    private const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTestVersion}"
+
+    // mock
+    private const val mockitoCore = "org.mockito:mockito-core:${Versions.mockitoVersion}"
+    private const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockitoVersion}"
+
+    val testLibraries = listOf(junit, junitExt, mockitoCore, mockitoInline, coreTesting, coroutinesTest)
     val androidTestLibraries = listOf(junit, junitExt, espresso)
 
     // lottie
