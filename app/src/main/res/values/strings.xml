@@ -18,7 +18,7 @@
     <string name="splash_label_story">Ayo Berbagi Cerita</string>
 
     <!--custom password input text-->
-    <string name="password_input_text_warning_password">"Minimal password 6 karakter"</string>
+    <string name="password_input_text_warning_password">"Minimal password 8 karakter"</string>
     <string name="password_input_text_warning_username" tools:keep="@string/password_input_text_warning_username">"Format email tidak cocok"</string>
 
     <!-- login fragment-->

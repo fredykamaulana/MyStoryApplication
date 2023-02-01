@@ -12,7 +12,7 @@
     <string name="splash_label_story">Let Share Your Story</string>
 
     <!--custom password input text-->
-    <string name="password_input_text_warning_password">"Password must have 6 character"</string>
+    <string name="password_input_text_warning_password">Password must have 8 character</string>
     <string name="password_input_text_warning_username" tools:keep="@string/password_input_text_warning_username">"Email format is invalid"</string>
 
     <!-- login fragment-->
