@@ -139,7 +139,7 @@ class StoriesListViewModelTest {
         verify(getStoriesUseCase).getStoriesWithPaging(pageSize = pageSize)
 
         //then
-        val actualResult = getStoriesUseCase.getStoriesWithPaging(pageSize = pageSize).asLiveData()
+        val actualResult = sut.getStoriesList(pageSize = pageSize).asLiveData()
         val differ = AsyncPagingDataDiffer(
             diffCallback = StoryListPagingAdapter.diffCallback,
             updateCallback = noopListUpdateCallback,
@@ -197,7 +197,7 @@ class StoriesListViewModelTest {
         verify(getStoriesUseCase).getStoriesWithPaging(pageSize = pageSize)
 
         //then
-        val actualResult = getStoriesUseCase.getStoriesWithPaging(pageSize = pageSize).asLiveData()
+        val actualResult = sut.getStoriesList(pageSize = pageSize).asLiveData()
         val differ = AsyncPagingDataDiffer(
             diffCallback = StoryListPagingAdapter.diffCallback,
             updateCallback = noopListUpdateCallback,
