@@ -30,6 +30,6 @@ interface GetStoriesApiService {
     suspend fun getStories(
         @Query("page") page: Int = 0,
         @Query("size") size: Int = 0,
-        @Query("location") location: Int = 1
+        @Query("location") location: Int = 0
     ): StoriesResponseDto
 }
