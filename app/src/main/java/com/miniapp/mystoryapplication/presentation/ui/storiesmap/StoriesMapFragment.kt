@@ -84,6 +84,10 @@ class StoriesMapFragment : SupportMapFragment(), OnMapReadyCallback {
     override fun onMapReady(map: GoogleMap) {
         mMap = map
         isMapReady = true
+        mMap.uiSettings.apply {
+            isZoomControlsEnabled = true
+            isZoomGesturesEnabled = true
+        }
     }
 
     private fun addMapMarkers(userLocationData: UserLocationData) {
@@ -93,8 +97,12 @@ class StoriesMapFragment : SupportMapFragment(), OnMapReadyCallback {
                     .position(latLng)
                     .title(userLocationData.userInfo[i])
             )?.showInfoWindow()
-            boundsBuilder.include(latLng)
+
         }
+        //just add indonesia country, from sabang to merauke lat long bound
+        //because some time there is any story that use other continent coordinates so the maps show weired area bound
+        boundsBuilder.include(LatLng(5.88969,95.31644))
+        boundsBuilder.include(LatLng(-8.4666648,140.333332))
         addMapBoundView()
     }
 
