@@ -65,7 +65,7 @@ class PasswordInputText : ConstraintLayout {
             if (text.toString().trim().isEmpty()) {
                 binding?.tilInputText?.helperText = ""
             } else {
-                binding?.tilInputText?.helperText = if (text.toString().trim().length < 6) {
+                binding?.tilInputText?.helperText = if (text.toString().trim().length < 8) {
                     context.getString(R.string.password_input_text_warning_password)
                 } else ""
             }
@@ -78,7 +78,7 @@ class PasswordInputText : ConstraintLayout {
     }
 
     fun isInputValid(): Boolean {
-        return binding?.etInputText?.text?.length!! >= 6 && binding?.tilInputText?.helperText == null
+        return binding?.etInputText?.text?.length!! >= 8 && binding?.tilInputText?.helperText == null
     }
 
     fun getText() = binding?.etInputText?.text.toString()
