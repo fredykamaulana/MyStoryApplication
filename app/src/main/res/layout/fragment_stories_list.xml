@@ -6,19 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.storieslist.StoriesListFragment">
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_stories_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_stories_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:itemCount="13"
-            tools:listitem="@layout/layout_stories_item" />
-
-    </androidx.core.widget.NestedScrollView>
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="2"
+        tools:listitem="@layout/layout_stories_item" />
 
     <include
         android:id="@+id/container_loading_progress"
